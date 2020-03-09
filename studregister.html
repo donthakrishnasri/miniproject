@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+<title>Mist</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    width: 400px;
+    margin-left: 400px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+span.sss {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+<body>
+<div class="wrapper row1">
+  <header id="header" class="hoc clear"> 
+       <div id="logo" class="one_quarter first">
+      <h1><a href="index.html">Mist</a></h1>
+      <p>Student Registration</p>
+    </div>
+    
+     <script type="text/javascript">
+              function validate()
+            {
+                  var b = document.reg.email.value;
+                  if(b.indexOf('@',0)<0){
+                    alert("email id must contain @");
+                    document.reg.email.focus();
+                    return false;
+                }
+                if(b.indexOf('.',0)<0)
+                {
+                    alert("email id must contain .");
+                    document.reg.email.focus();
+                    return false;
+                }
+                return true;
+            }
+            
+        </script>
+    </header>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/gfrt.jpg');">
+  <div id="pageintro" class="hoc clear"> 
+    <h2> Student Registration  Form</h2>
+
+<form name ="reg" action="db_registration.jsp" method="post"  onsubmit="return validate()">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+       <label><font color="white" >firstname</label>
+          <field name="firstname" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter First Name" name="firstname" pattern="[a-z]+"  required>
+    
+ <label><font color="white" >lastname</label>
+        <field name="lastname" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+        <input type="text" placeholder="Enter Last Name" name="lastname" pattern="[a-z]+"  required>
+        &nbsp;
+         <label><font color="white" >DOB</label>
+           <field name="DOB" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="date" placeholder="Enter DOB" name="DOB" min="1960-01-01" max="2040-12-31"  required>
+    &nbsp;
+     <label><font color="white" >gender</label>
+        <field name="gender" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+        <select name="gender">
+
+  <option value="-1" selected>select gender..</option>
+
+  <option value="male">Male</option>
+
+  <option value="female">Female</option>
+        </select>
+    
+    &nbsp;
+     <label><font color="white" >aadhar</label>
+        <field name="aadhar" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Aadhar card number " name="aadhar" maxlength="12"  pattern="[0-9]+" required>
+    
+     <label><font color="white" >fname</label>
+        <field name="fname" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Father name" name="fname" pattern="[a-z]+" required>
+    
+     <label><font color="white" >mname</label>
+        <field name="mname" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Mother name" name="mname"pattern="[a-z]+" required>
+    
+     <label><font color="white" >profession</label>
+        <field name="profession" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Father's profession" name="profession" pattern="[a-z]+" required>
+    
+     <label><font color="white" >address</label>
+        <field name="address" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter address" name="address"  required>
+    
+     <label><font color="white" >pincode</label>
+        <field name="pincode" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Pincode" name="pincode" pattern="[0-9]+" required>
+    
+     <label><font color="white" >mobileno</label>
+        <field name="mobileno" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Mobile No" name="mobileno" pattern="[0-9]+"  required>
+    
+    <label><font color="white" >email</label>
+        <field name="email" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter Email ID" name="email" required>
+    
+     <label><font color="white" >userid</label>
+            <field name="userid" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="text" placeholder="Enter your hallticket no" name="userid" pattern="[A-Za-z0-9]+" required>
+
+     <label><font color="white" >password</label>
+            <field name="pass" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <input type="password" placeholder="Enter password" name="pass" minlength="4" maxlength="8" required>
+
+    
+     <label><font color="white" >city</label>
+        <field name="City" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="City">
+
+  <option value="-1" selected>select your city..</option>
+
+  <option value="New Delhi">NEW DELHI</option>
+
+  <option value="Mumbai">MUMBAI</option>
+
+  <option value="Goa">GOA</option>
+
+  <option value="Patna">PATNA</option>
+
+  </select> 
+        &nbsp;
+         <label><font color="white" >Religion</label>
+        <field name="Religion" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="Religion">
+
+  <option value="-1" selected>select your religion..</option>
+
+  <option value="Hindu">HINDU</option>
+
+  <option value="Muslim">MUSLIM</option>
+
+  <option value="Christian">CHRISTIAN</option>
+
+    </select>
+        &nbsp;
+         <label><font color="white" >District</label>
+        <field name="District" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="District">
+
+  <option value="-1" selected>select your district..</option>
+
+  <option value="Hyderabad">HYDERABAD</option>
+
+  <option value="Rangareddy">RANGAREDDY</option>
+
+  <option value="Nizamabad">NIZAMABAD</option>
+
+    </select>
+        &nbsp;
+         <label><font color="white" >State</label>
+        <field name="State" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="State">
+
+  <option value="-1" selected>select your state..</option>
+
+  <option value="Telangana">TELANGANA</option>
+
+  <option value="AndhraPradesh">ANDHRA PRADESH</option>
+
+  <option value="Tamilnadu">TAMILNADU</option>
+
+    </select>
+        &nbsp;
+         <label><font color="white" >category</label>
+        <field name="Category" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="Category">
+
+  <option value="-1" selected>select your category..</option>
+
+  <option value="OC">OC</option>
+
+  <option value="BC">BC</option>
+
+  <option value="SC">SC</option>
+  
+   </select>
+        &nbsp;
+         <label><font color="white" >institute</label>
+        <field name="institute" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="institute">
+
+  <option value="-1" selected>select your institute..</option>
+
+  <option value="Mahaveer Institute Of Science And Technology">Mahaveer Institute Of Science And Technology</option>
+
+    </select>
+       &nbsp;
+       
+        <label><font color="white" >institutedistrict</label>
+        <field name="institutedistrict" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="instituedistrict">
+
+  <option value="-1" selected>select your institutedistrict..</option>
+
+  <option value="Hyderabad">HYDERABAD</option>
+
+  <option value="Rangareddy">RANGAREDDY</option>
+
+  <option value="Nizamabad">NIZAMABAD</option>
+
+    </select> 
+        &nbsp;
+        
+         <label><font color="white" >completionyear</label>
+        <field name="completionyear" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="completionyear">
+
+  <option value="-1" selected>select your year..</option>
+  <option value=2020>2020</option>
+  <option value=2019>2019</option>
+  <option value=2018>2018</option>
+  <option value=2017>2017</option>
+  <option value=2016>2016</option>
+  <option value=2015>2015</option>
+
+    </select>
+        &nbsp;
+         <label><font color="white" >branch</label>
+        <field name="branch" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+    <select name="branch">
+
+  <option value="-1" selected>select your branch..</option>
+
+  <option value="IT">IT</option>
+
+  <option value="CSE">CSE</option>
+
+  <option value="EEE">EEE</option>
+
+    </select> 
+        &nbsp;
+        
+         <label><font color="white" >course</label>
+        <field name="Course" style="color: black;" attrs="{'readonly':[('state', '=', 'done')]}"/>
+        <select name="Course">
+  <option value="-1" selected>select your course..</option>
+  <option value="B.Tech">B.TECH</option>
+  <option value="DIPLOMA">DIPLOMA</option>
+  <option value="MBA">MBA</option>
+  <option value="DEGREE">DEGREE</option>
+  </select>
+        &nbsp;
+                
+         
+    
+        <button type="submit">Register</button>
+    
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    
+  </div>
+</form>
+
+  </div>
+</div>
+   <div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="mist1.html">MIST</a></p>
+         
+
+<!-- JAVASCRIPTS -->
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>
